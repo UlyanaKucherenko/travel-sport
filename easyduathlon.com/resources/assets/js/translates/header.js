@@ -1,0 +1,53 @@
+export default {
+  "en": {
+    "home": "Home",
+    "whoweare": "Who we are",
+    "ebooks": "E-Books",
+    // "benefits": "Benefits",
+    "about": "About",
+    "services": "Services",
+    "tips": "Tips",
+    "plans": "Plans",
+    // "customers": "Testimonials",
+    "contact": "Contact Us",
+    "member": "Member Area",
+    "login": "Login",
+    "logout": "SignOut",
+    "offers":"Offers",
+    "checklist":"Checklist"
+  },
+  "it": {
+    "home": "Principale",
+    "whoweare": "Chi siamo",
+    "ebooks": "E-Books",
+    "benefits": "Benefici",
+    "about": "Chi siamo",
+    "services": "Salute",
+    "tips": "Suggerimenti",
+    "plans": "Il Programma",
+    "customers": "Testimonianze",
+    "contact": "Contattaci",
+    "member": "Area Membri",
+    "login": "Accesso",
+    "logout": "Disconnessione",
+    "offers":"",
+    "checklist":"Checklist"
+  },
+  "fr": {
+    "home": "Maison",
+    "whoweare": "Qui nous sommes",
+    "ebooks": "Livres électroniques",
+    "benefits": "Avantages",
+    "about": "À propos de nous",
+    "services": "Santé",
+    "tips": "Conseils",
+    "plans": "Des plans",
+    "customers": "Témoignages",
+    "contact": "Contactez nous",
+    "member": "Zone des membres",
+    "login": "S'identifier",
+    "logout": "Déconnexion",
+    "offers":"",
+    "checklist":"Checklist"
+  }
+}

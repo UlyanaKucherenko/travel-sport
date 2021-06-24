@@ -1,0 +1,1 @@
+<footer-members-section locale="{{ $locale }}"></footer-members-section>

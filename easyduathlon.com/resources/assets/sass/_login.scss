@@ -1,0 +1,180 @@
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(21, 20, 26, .7);
+  z-index: 9999;
+
+  .login-popup {
+    width: 100%;
+    max-width: 330px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    color: #000;
+    background-color: rgba(255,255,255,.95);
+    border-radius: 13px;
+    text-align: center;
+
+    &__btn--close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1px;
+        width: 18px;
+        background-color: #212121;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 1px;
+        width: 18px;
+        background-color: #212121;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &__download,
+    &__join {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+
+    &__join {
+      &--link {
+        color: var(--color-accent);
+      }
+    }
+
+    .form {
+      &__row {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+      }
+
+      .required-msg {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        color: $red;
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+      &__inp {
+        font-family: $font;
+        background: #fff;
+        border: 1px solid #E8E8E8;
+        border-radius: 15px;
+        width: 100%;
+        height: 48px;
+        padding: 0 15px;
+        font-size: 14px;
+        color: $darkGray;
+        resize: none;
+        transition: .2s ease-in-out;
+      }
+
+      &__btn {
+        display: block;
+        width: 100%;
+        max-width: 220px;
+        font-size: 20px;
+        color: #fff;
+        padding: 8px 10px 12px;
+        // border: 1px solid var(--color-primary);
+        border-radius: 50px;
+        outline: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        background: var(--color-primary);
+        margin: 25px auto 0;
+        cursor: pointer;
+      }
+    }
+
+    .radio-box {
+      width: 100%;
+      max-width: 470px;
+      margin: 10px auto 0;
+
+      label {
+        cursor: pointer;
+        padding: 0 10px;
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: left;
+        color: #000;
+      }
+
+      input[type=checkbox] {
+        display: none;
+      }
+
+      input[type=checkbox] + span {
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        border-radius: 2px;
+        transition: all 0.25s ease-in-out;
+        position: relative;
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        background-color: transparent;
+        border: 1px solid transparent;
+        margin: 5px 15px 10px 0;
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          // border: 1px solid var(--color-primary);
+          border-radius: 2px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      input[type=checkbox]:checked + span {
+        background-color: var(--color-accent);
+        border: 3px solid transparent;
+      }
+    }
+  }
+}

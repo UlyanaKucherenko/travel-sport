@@ -1,0 +1,102 @@
+// Font
+html {
+
+  --poppins: 'Poppins', sans-serif;
+  --open-sans: 'Open Sans', sans-serif;
+
+  --font-default: var(--open-sans);
+  --font-title: var(--open-sans);
+
+  --color-accent: #FEBA1B;
+  --color-accent-hover: #000;
+  --color-text: #F4F4F4;
+  --color-white: white;
+  --color-black: black;
+  --plans-bg: #FFFFFF;
+  --color-base: var(--color-white);
+
+  --color-member-area: var(--color-accent);
+  --color-docs-bg: #000000e0;
+  --header-color-bg: #000000;
+  --color-menu-bg: #fff;
+  --color-header-text: var(--color-white);
+  --color-header-text-scrolled: var(--color-white);
+  --color-header-bg-base: var(--color-black);
+  --color-header-bg-scrolled: rgba(0,0,0,0.6);
+  --color-footer-bg: transparent;
+  --color-btn-base: #000000;
+  --color-text-btn-base: var(--color-black);
+  --color-btn-base-hover:  var(--color-black);
+  --color-btn-reversed: var(--color-accent);
+  --color-btn-reversed-hover: #454abf;
+  --color-checkbox: var(--color-accent);
+  --color-lang: #454abf;
+
+  --header-height: 70px;
+  --section-offset: calc(var(--space-unit) * 6);
+
+  --section-header-title-offset: calc(var(--space-unit) * 3);
+
+  --text-48: calc(var(--space-unit) * 5);
+  --text-40: calc(var(--space-unit) * 4);
+  --text-24: calc(var(--space-unit) * 2.4);
+  --text-20: calc(var(--space-unit) * 2);
+  --text-18: calc(var(--space-unit) * 1.8);
+
+  --space-unit: 10px;
+
+
+  @media (max-width: 1199px) {
+    --space-unit: 8.5px;
+  }
+
+  @media (max-width: 991px) {
+    --text-24: 18px;
+    --text-20: 16px;
+    --text-18: 14px;
+
+    --space-unit: 7px;
+  }
+
+  @media (max-width: 767px) {
+    --space-unit: 6px;
+  }
+
+  @media (max-width: 575px) {
+    --space-unit: 5px;
+  }
+}
+
+
+$font: Lato, sans-serif;
+$fontMerriweather: Merriweather, sans-serif;
+
+// Main colors
+$purple   : #9C00C3;
+$blue      : #578FFA;
+// var(--color-docs-bg) : #4125B2;
+$yellow   : #FFC223;
+$gray     : #646464;
+$lightGrey: #EDEDEC;
+$darkGray : #333333;
+$red      : #e03333;
+$green    : #78D241;
+
+
+// Button
+$btn-color-white: #fff;
+$btn-color-black: #000;
+
+// Localization
+$localization-text-color: #000;
+$localization-arrow-color: #000;
+$localization-hover-color: var(--color-docs-bg);
+
+// Menu bg
+$menu-bg: #fff;
+
+
+// Header bg
+$header-bg: $purple;
+
+// MemberArea

@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-default);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  overflow-x: hidden;
+  background: #5F8098;
+;
+
+  &.overflow-off {
+    overflow: hidden;
+  }
+}
+input,
+select,
+button,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+label {
+  margin-bottom: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+// Common classes
+.img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.flex {
+  display: flex;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.center- {
+  &x {
+    justify-content: center;
+  }
+  &y {
+    align-items: center;
+  }
+}
+
+.in-column {
+  flex-direction: column;
+}
+
+// overlay
+.overlay {
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(77, 76, 128, 0.93);
+  }
+}

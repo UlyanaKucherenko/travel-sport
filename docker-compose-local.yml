@@ -1,0 +1,56 @@
+version: '3.6'
+services:
+
+  # NodeJS Services
+  nodejs:
+    build: docker/nodejs
+    user: 1000:1000
+    ports:
+      - "8080:8080"
+    working_dir: /var/www
+    depends_on:
+      - kvadratlonworld_com_web
+      - triathlonmaster_com_web
+      - biathlonexpert_com_web
+      - easyduathlon_com_web
+      - ultramarathoners_com_web
+    volumes:
+      - "./descriptors/:/var/www/descriptors/"
+      - "./ultramarathoners.com/:/var/www/ultramarathoners.com/"
+      - "./easyduathlon.com/:/var/www/easyduathlon.com/"
+      - "./triathlonmaster.com/:/var/www/triathlonmaster.com/"
+      - "./biathlonexpert.com/:/var/www/biathlonexpert.com/"
+      - "./kvadratlonworld.com/:/var/www/kvadratlonworld.com/"
+
+
+  #Nginx Service
+  webserver:
+#    image: nginx:1.16-alpine
+    build: docker/nginx
+    depends_on:
+      - kvadratlonworld_com_web
+      - triathlonmaster_com_web
+      - biathlonexpert_com_web
+      - easyduathlon_com_web
+      - ultramarathoners_com_web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./descriptors/:/var/www/descriptors/
+
+      - ./kvadratlonworld.com/:/var/www/kvadratlonworld.com/
+      - ./kvadratlonworld.com/docker/nginx/local.conf:/etc/nginx/conf.d/kvadratlonworld.conf
+
+      - ./triathlonmaster.com/:/var/www/triathlonmaster.com/
+      - ./triathlonmaster.com/docker/nginx/local.conf:/etc/nginx/conf.d/triathlonmaster.conf
+
+      - ./biathlonexpert.com/:/var/www/biathlonexpert.com/
+      - ./biathlonexpert.com/docker/nginx/local.conf:/etc/nginx/conf.d/biathlonexpert.conf
+
+      - ./easyduathlon.com/:/var/www/easyduathlon.com/
+      - ./easyduathlon.com/docker/nginx/local.conf:/etc/nginx/conf.d/easyduathlon.conf
+
+      - ./ultramarathoners.com/:/var/www/ultramarathoners.com/
+      - ./ultramarathoners.com/docker/nginx/local.conf:/etc/nginx/conf.d/ultramarathoners.conf

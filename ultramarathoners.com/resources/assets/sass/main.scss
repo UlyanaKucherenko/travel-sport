@@ -1,0 +1,46 @@
+/*-----BOOTSTRAP-----*/
+@import "./bootstrap/bootstrap.min.css";
+
+/*-----SLICK SLIDER-----*/
+@import "slick/slick";
+
+/*---BASE---*/
+@import 'common/mixins';
+@import 'common/variables';
+@import 'common/font';
+@import 'common/common';
+@import 'common/text';
+
+/*---COMPONENTS---*/
+@import 'components/logo';
+@import 'components/localiztion';
+@import 'components/button';
+@import 'components/card';
+@import 'components/dots';
+@import 'components/form-field';
+@import 'components/anchor';
+@import 'components/section-title';
+@import 'components/section-desc';
+
+/*-----SECTIONS-----*/
+@import 'sections/selectPlan';
+
+//@import 'sections/cards';
+//@import 'sections/ebooks';
+
+@import 'login.scss';
+
+/*-----MEMBER AREA-----*/
+@import 'member_area/member_menu';
+@import 'member_area/member_dashboard';
+@import 'member_area/member_books';
+@import 'member_area/member_manage';
+@import 'member_area/member_profile';
+@import 'member_area/member_trainings';
+
+
+@import 'privacy_policy';
+@import 'terms_conditions';
+@import 'refund_policy';
+@import 'succees_msg';
+@import 'popup';

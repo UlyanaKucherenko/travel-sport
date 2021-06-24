@@ -1,0 +1,80 @@
+// Font
+html {
+  --poppins: 'Poppins', sans-serif;
+  --open-sans: 'Open Sans', sans-serif;
+
+  --font-default: var(--open-sans);
+  --font-title: var(--open-sans);
+
+  --color-accent: #2E2E2E;
+  --color-accent-hover: #1F5436;
+  --color-text: #FFFFFF;
+  --color-btn-base: var(--color-accent);
+  --color-btn-base-hover: #1F5436;
+  --color-checkbox: #E20102;
+  --color-lang: var(--color-accent);
+  --color-header-text: #FFFFFF;
+  --color-header-bg-base: #212529ab;
+  --color-header-bg-scrolled: #212529ab;
+  --color-footer-bg: transparent;
+  --color-btn-reversed: #E20102;
+  --color-member-area: var(--color-accent);
+  --color-docs-bg: #000000e0;
+  --color-menu-bg: white;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --plans-bg: #FFFFFF;
+  --header-height: 70px;
+
+  --space-unit: 10px;
+
+  @media (max-width: 1199px) {
+    --space-unit: 8.5px;
+  }
+
+  @media (max-width: 991px) {
+    --space-unit: 7px;
+  }
+
+  @media (max-width: 767px) {
+    --space-unit: 6px;
+  }
+
+  @media (max-width: 575px) {
+    --space-unit: 5px;
+  }
+}
+
+
+$font: Lato, sans-serif;
+$fontMerriweather: Merriweather, sans-serif;
+
+// Main colors
+$purple   : #9C00C3;
+$blue      : #578FFA;
+// var(--color-docs-bg) : #4125B2;
+$yellow   : #FFC223;
+$gray     : #646464;
+$lightGrey: #EDEDEC;
+$darkGray : #333333;
+$red      : #e03333;
+$green    : #78D241;
+
+
+// Button
+$btn-color-white: #fff;
+$btn-color-black: #000;
+
+// Localization
+$localization-text-color: #000;
+$localization-arrow-color: #000;
+$localization-hover-color: var(--color-docs-bg);
+
+// Menu bg
+$menu-bg: #fff;
+
+
+// Header bg
+$header-bg: $purple;
+
+// MemberArea

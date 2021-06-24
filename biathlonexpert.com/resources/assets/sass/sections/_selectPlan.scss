@@ -1,0 +1,334 @@
+#select-plan {
+  position: relative;
+  z-index: 0;
+  padding: 120px 0 65px;
+  background: white;
+  // background: center / cover no-repeat url(../img/header.png);
+
+  .select-plan-title {
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  .plan {
+    width: 100%;
+    max-width: 370px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    color: black;
+    margin: 0 auto;
+    border: none;
+    border-radius: 13px;
+
+    .item {
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    .item:nth-child(2) {
+      background: var(--color-accent);
+    }
+
+    .item:nth-child(3) {
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    &__price {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    &__period {
+      font-size: 18px;
+    }
+
+    &__workout {
+      font-size: 18px;
+    }
+
+    .select-2 {
+      position: relative;
+    }
+
+    .select_result {
+      display: inline-block;
+      position: relative;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        position: relative;
+        top: -4px;
+        margin-left: 10px;
+        transform: rotate(45deg);
+        border-right: 3px solid $gray;
+        border-bottom: 3px solid $gray;
+      }
+    }
+
+    .select_selector {
+      display: inline-block;
+      width: 370px;
+      position: absolute;
+      top: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 6px #444;
+      background-color: #fff;
+    }
+
+    .select_selector li {
+      display: block;
+      text-align: center;
+      margin: 5px 0;
+      padding: 5px;
+      cursor: pointer;
+      color: #000;
+      text-transform: uppercase;
+      font-size: 20px;
+
+      &:hover {
+        color: #fff;
+        background: var(--color-accent);
+      }
+    }
+  }
+
+  .plan-form {
+    max-width: 500px;
+    margin: 0 auto 10px;
+    background: #e3f2ff;
+    border-radius: 13px;
+    padding: 25px;
+    color: black;
+    // color: white;
+
+    &__inp {
+      font-family: $font;
+      background: #fff;
+      border: 1px solid #E8E8E8;
+      border-radius: 15px;
+      width: 100%;
+      height: 48px;
+      padding: 0 15px;
+      font-size: 14px;
+      color: $darkGray;
+      margin-bottom: 10px;
+      resize: none;
+      transition: .2s ease-in-out;
+
+      //display: block;
+      //width: 100%;
+      //height: 40px;
+      //font-family: $font;
+      //font-size: 14px;
+      //background-color: transparent;
+      //padding-left: 15px;
+      //border: 1px solid var(--color-primary);
+      //border-radius: 4px;
+      //outline: none;
+      //margin-bottom: 15px;
+      //color: #fff;
+
+      &.required {
+        border-color: $red;
+        color: $red;
+        box-shadow: 0 0 0 .2rem lighten($red, 30);
+      }
+    }
+
+    &__btn {
+      display: block;
+      margin: 0 auto;
+
+      &-block {
+        min-height: 60px;
+      }
+    }
+  }
+
+  .radio-box {
+    width: 100%;
+    max-width: 470px;
+    margin: 20px auto 0;
+
+    label {
+      cursor: pointer;
+      padding: 0 50px 0 5px;
+      width: 100%;
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox] + span {
+      display: block;
+      float: left;
+      box-sizing: border-box;
+      border-radius: 2px;
+      transition: .25s ease-in-out;
+      position: relative;
+      width: 12px;
+      height: 12px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      margin: 10px 15px 50px 0;
+    }
+
+    input[type=checkbox] + span:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      border: 1px solid var(--color-primary);
+      border-radius: 2px;
+      width: 20px;
+      height: 20px;
+    }
+
+    input[type=checkbox]:checked + span {
+      background-color: var(--color-primary);
+      border: 3px solid transparent;
+    }
+  }
+}
+
+
+// === Animation Vue === //
+// select_plan
+.select_plan-enter-active,
+.select_plan-leave-active {
+  transition: .2s linear;
+}
+
+.select_plan-enter,
+.select_plan-leave-to {
+  opacity: 0;
+}
+
+.btn_submit-enter,
+.btn_submit-leave-to {
+  transition: .3s linear;
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.modal-error-enter-active,
+.modal-success-leave-active {
+  transition: .3s linear;
+}
+
+.modal-error-enter,
+.modal-error-leave-to,
+.modal-success-enter,
+.modal-success-leave-to {
+  transition: .3s linear;
+  opacity: 0;
+}
+
+.modal-error {
+  position: fixed;
+  background: rgba(0, 0, 0, .5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+
+  &__text {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    color: $red;
+    border: 1px solid $red;
+    background-color: #F3C6C6;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px 50px;
+    z-index: 9999;
+  }
+}
+
+
+.cart-modal-iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+
+  iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+@media screen and (max-width: 991px) {
+
+  #select-plan {
+    .plan {
+      margin-bottom: 50px;
+
+      &__title {
+        font-size: 32px;
+      }
+
+      &__price {
+        font-size: 32px;
+      }
+
+      &__period {
+        font-size: 20px;
+      }
+
+      &__workout {
+        font-size: 20px;
+      }
+    }
+
+    .wrapInput {
+      .itemInput {
+        .formInput {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+
+  #select-plan {
+    .wrapInput {
+      .itemInput {
+        margin: 0;
+
+        .formInput {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,130 @@
+.popup {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px;
+  box-shadow: 0 10px 20px -10px #000;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &-title {
+    position: relative;
+    padding: .5rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  &-content {
+    padding: 1rem;
+    p {
+      margin: 0;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  &-btn {
+    text-decoration: none;
+    cursor: pointer;
+    padding: .25rem 0.75rem;
+    margin: 0 5px;
+    border-radius: 2px;
+    text-align: center;
+    color: #fff;
+
+    &--green {
+      background: $green;
+    }
+    &--red {
+      background: $red;
+    }
+  }
+
+  &-close {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #fff;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+
+
+    &:before,
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 11px;
+      height: 1px;
+      background: #fff;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  &.error {
+    .popup-title {
+      background: $red;
+    }
+  }
+  &.success {
+    .popup-title {
+      background: $green;
+    }
+  }
+  &.confirm {
+    .popup {
+      &-title {
+        color: #000;
+        background: $yellow;
+      }
+      &-close {
+        border-color: #000;
+        &:before,
+        &:after {
+          background: #000;
+        }
+      }
+    }
+
+  }
+
+  &-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.5);
+  }
+}
+
+
+// Animations
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

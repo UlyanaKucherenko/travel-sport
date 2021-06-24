@@ -1,0 +1,118 @@
+version: '3.6'
+services:
+
+  #######################################################################
+  ####################  biathlonexpert.com  ################################
+  #######################################################################
+
+  biathlonexpert_com_web:
+    build: docker/php-fpm
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - "DOCKER_PHP_CONFIG=${DOCKER_PHP_CONFIG}"
+    working_dir: /var/www/biathlonexpert.com/
+    volumes:
+      - "./biathlonexpert.com/:/var/www/biathlonexpert.com/"
+      - "./docker/php-fpm/local.ini:/usr/local/etc/php/conf.d/local.ini"
+      - "./.composer/:/www/.composer"
+
+  #######################################################################
+  ####################  triathlonmaster.com  ################################
+  #######################################################################
+
+  triathlonmaster_com_web:
+    build: docker/php-fpm
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - "DOCKER_PHP_CONFIG=${DOCKER_PHP_CONFIG}"
+    working_dir: /var/www/triathlonmaster.com/
+    volumes:
+      - "./triathlonmaster.com/:/var/www/triathlonmaster.com/"
+      - "./docker/php-fpm/local.ini:/usr/local/etc/php/conf.d/local.ini"
+      - "./.composer/:/www/.composer"
+
+  #######################################################################
+  ####################  ultramarathoners.com  ################################
+  #######################################################################
+
+  ultramarathoners_com_web:
+    build: docker/php-fpm
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - "DOCKER_PHP_CONFIG=${DOCKER_PHP_CONFIG}"
+    working_dir: /var/www/ultramarathoners.com/
+    volumes:
+      - "./ultramarathoners.com/:/var/www/ultramarathoners.com/"
+      - "./docker/php-fpm/local.ini:/usr/local/etc/php/conf.d/local.ini"
+      - "./.composer/:/www/.composer"
+
+  #######################################################################
+  ####################  easyduathlon.com  ################################
+  #######################################################################
+
+  easyduathlon_com_web:
+    build: docker/php-fpm
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - "DOCKER_PHP_CONFIG=${DOCKER_PHP_CONFIG}"
+    working_dir: /var/www/easyduathlon.com/
+    volumes:
+      - "./easyduathlon.com/:/var/www/easyduathlon.com/"
+      - "./docker/php-fpm/local.ini:/usr/local/etc/php/conf.d/local.ini"
+      - "./.composer/:/www/.composer"
+
+
+  #######################################################################
+  #################### kvadratlonworld.com ################################
+  #######################################################################
+
+  kvadratlonworld_com_web:
+    build: docker/php-fpm
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      - "DOCKER_PHP_CONFIG=${DOCKER_PHP_CONFIG}"
+    working_dir: /var/www/kvadratlonworld.com/
+    volumes:
+      - "./kvadratlonworld.com/:/var/www/kvadratlonworld.com/"
+      - "./docker/php-fpm/local.ini:/usr/local/etc/php/conf.d/local.ini"
+      - "./.composer/:/www/.composer"
+
+  #######################################################################
+  #######################   Services   ##################################
+  #######################################################################
+
+  db:
+    image: mysql/mysql-server:5.7
+    restart: unless-stopped
+    ports:
+     - "3306:3306"
+    volumes:
+      - "database:/var/lib/mysql"
+      - "./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    environment:
+      - "MYSQL_ROOT_HOST=%"
+      - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
+    command: [
+      # "--general_log=1",
+      # "--general_log_file=/var/lib/mysql/general_log.log",
+      "--character-set-server=utf8mb4",
+      "--collation-server=utf8mb4_general_ci",
+      "--default-storage-engine=innodb",
+      "--innodb-file-per-table",
+      "--explicit_defaults_for_timestamp=1",
+      "--default-time-zone=+00:00"
+    ]
+
+#Volumes
+volumes:
+  database:

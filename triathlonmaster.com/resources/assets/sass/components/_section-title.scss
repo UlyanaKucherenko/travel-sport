@@ -1,0 +1,12 @@
+.section-title {
+  font-family: var(--font-title);
+  font-size: calc(var(--space-unit) * 4.8);
+  margin-bottom:  calc(var(--space-unit) * 2.4);
+  line-height: 135%;
+  color: #FFFFFF;
+  text-align: center;
+
+  @media (max-width: 767px) {
+    font-size: calc(var(--space-unit) * 5.8);
+  }
+}
